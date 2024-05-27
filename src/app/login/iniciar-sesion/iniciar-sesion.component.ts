@@ -5,9 +5,11 @@ import { UserCredential } from '@angular/fire/auth';
 import { AutenticacionService } from '../../services/autenticacion.service';
 
 @Component({
-  selector: 'app-iniciar-sesion',
-  templateUrl: './iniciar-sesion.component.html',
-  styleUrls: ['./iniciar-sesion.component.scss']
+    selector: 'app-iniciar-sesion',
+    standalone: true,
+    imports: [],
+    templateUrl: './iniciar-sesion.component.html',
+    styleUrls: ['./iniciar-sesion.component.scss']
 })
 export class IniciarSesionComponent {
   loginForm: FormGroup;
