@@ -3,5 +3,6 @@ export class Administrador {
     nombre: string = '';
     email: string = '';
     usuario: string = '';
-    contraseña: string = '';
-}
+    contrasena: string = '';
+  }
+  
