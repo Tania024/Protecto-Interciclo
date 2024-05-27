@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { CarritoComponent } from './components/carrito/carrito.component';
+import { IniciarSesionComponent } from './login/iniciar-sesion/iniciar-sesion.component';
+import { RegistrarseComponent } from './login/registrarse/registrarse.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InicioComponent,CarritoComponent],
+  imports: [RouterOutlet, RegistrarseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

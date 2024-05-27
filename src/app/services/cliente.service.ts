@@ -1,32 +1,41 @@
 import { Injectable } from '@angular/core';
+import { Firestore, collectionData, docData, collection, doc, addDoc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { DocumentReference, CollectionReference } from 'firebase/firestore';
 import { Cliente } from '../domain/cliente';
-import { Observable, map } from 'rxjs';
-import { DocumentReference, Firestore } from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  constructor(private firestore: Firestore) { }
+  private collectionName = 'clientes';
+  private collectionRef: CollectionReference<Cliente>;
+
+  constructor(private firestore: Firestore) {
+    this.collectionRef = collection(this.firestore, this.collectionName) as CollectionReference<Cliente>;
+  }
 
   getClientes(): Observable<Cliente[]> {
-    return this.firestore.collection<Cliente>('clientes').valueChanges({ idField: 'id' });
+    return collectionData(this.collectionRef, { idField: 'id' }) as Observable<Cliente[]>;
   }
 
   getCliente(id: string): Observable<Cliente> {
-    return this.firestore.doc<Cliente>(`clientes/${id}`).valueChanges({ idField: 'id' });
+    const clienteDoc = doc(this.firestore, `${this.collectionName}/${id}`);
+    return docData(clienteDoc, { idField: 'id' }) as Observable<Cliente>;
   }
 
-  addCliente(cliente: Cliente): Promise<DocumentReference> {
-    return this.firestore.collection<Cliente>('clientes').add(cliente);
+  addCliente(cliente: Cliente): Promise<DocumentReference<Cliente>> {
+    return addDoc(this.collectionRef, cliente);
   }
 
   updateCliente(id: string, cliente: Cliente): Promise<void> {
-    delete cliente.id; // Remove id field from object
-    return this.firestore.doc<Cliente>(`clientes/${id}`).update(cliente);
+    const clienteDoc = doc(this.firestore, `${this.collectionName}/${id}`);
+    return updateDoc(clienteDoc, { ...cliente });
   }
 
   deleteCliente(id: string): Promise<void> {
-    return this.firestore.doc<Cliente>(`clientes/${id}`).delete();
+    const clienteDoc = doc(this.firestore, `${this.collectionName}/${id}`);
+    return deleteDoc(clienteDoc);
   }
 }
