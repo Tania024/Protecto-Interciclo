@@ -81,7 +81,7 @@
 
 //------------------------------------PORTADA------------------------------------------>
 $ancho-imagen: 1400px;
-$alto-imagen: 800px;
+$alto-imagen: 660px;
 
 .portada {
   width: $ancho-imagen;
@@ -90,6 +90,7 @@ $alto-imagen: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 70vh; 
 }
 
 .portada img {
@@ -98,7 +99,7 @@ $alto-imagen: 800px;
   object-fit: cover;
 }
 
-
+//--------------------------------BOBY--------------------------------------------------------------
 
 
 

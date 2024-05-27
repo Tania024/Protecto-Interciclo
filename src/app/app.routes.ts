@@ -8,10 +8,11 @@ import { IniciarSesionComponent } from './login/iniciar-sesion/iniciar-sesion.co
 import { RegistrarseComponent } from './login/registrarse/registrarse.component';
 
 export const routes: Routes = [
-    {path: 'carritocompras', title: 'CarritoCompras', component: CarritoComponent},
-    {path: 'categoria', title: 'Categoria', component: CategoriaComponent},
-    {path: 'inicio', title: 'Inicio', component: InicioComponent},
+
     {path: 'iniciarsesion', title: 'IniciarSesion', component: IniciarSesionComponent},
     {path: 'registrarse', title: 'Registrarse', component: RegistrarseComponent},
-    
+    {path: 'inicio', title: 'Inicio', component: InicioComponent},
+    {path: 'categoria', title: 'Categoria', component: CategoriaComponent},
+    {path: 'carrito', title: 'Carrito', component: CarritoComponent},
+   
 ];
