@@ -97,66 +97,57 @@ $alto-imagen: 800px;
   object-fit: cover;
 }
 
-/*-------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------BOBY----------------------------------------------------------------*/
+//-------------------------------------------------AREAS------------------------------------------------
+//-------------------------------------------------AREAS------------------------------------------------
 
+/* Estilos para el título centrado */
+.centered-title {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
 
+/* Estilos para la cuadrícula de opciones */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de igual ancho */
+  grid-gap: 5px; /* Reducción del espacio entre las imágenes */
+}
 
+/* Estilos para cada opción individual */
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la opción */
+}
 
+/* Estilos para el contenedor de imagen */
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 280px; /* Ajusta la altura del contenedor de imagen */
+ 
+}
 
+/* Estilos para la imagen dentro del contenedor */
+.image-container img {
+  width: 100%;
+  height: 100%; /* Ajusta la imagen para que ocupe todo el espacio disponible */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Estilos para el contenedor de texto */
+.text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(169, 166, 166, 0.6); /* Fondo semitransparente */
+  color: rgb(26, 23, 23); /* Color de texto oscuro */
+  padding: 2px; /* Pequeño relleno */
+}
 
 
 

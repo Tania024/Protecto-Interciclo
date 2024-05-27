@@ -79,6 +79,188 @@
     width: 25px;
   }
 
+//------------------------------BOBY-----------------------------------------------------
+.productos {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.product-info input[type="number"] {
+  width: 50px;
+}
+
+.product-info img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .product-info {
+    align-items: center;
+  }
+
+  .product-info span {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
