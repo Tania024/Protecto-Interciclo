@@ -1,179 +1,227 @@
-
-
-/* Variables */
-:root {
-    --primary-color: #000709;
-    --secondary-color: #555;
-    --font-family: 'Arial, sans-serif';
-    --button-text-color: rgb(226, 158, 30);
-    --button-hover-color: #5b81ac;
-}
-
-/* General Styles */
-body {
-    font-family: var(--font-family);
-    color: var(--primary-color);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Header Styles */
-header {
-    background-color: var(--secondary-color);
-    color: rgb(24, 5, 5);
-    padding: 20px;
-}
-
+//-------------------------------------------------Encabezado------------------------------------------------
 .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.encabezado {
-    display: flex;
-    align-items: center;
-    margin-right: 30px;
-}
-
-.logo {
-    width: 50px;
-    height: auto;
-    margin-right: 20px;
-}
-
-h1 {
-    margin: 0;
-}
-
-/*--------------------------------------------ESTILOS ENCABEZADO----------------------------------*/
-
-button {
-    padding: 10px 20px; /* Padding para espacio interno */
-    margin: 5px; /* Margen entre los botones */
-    
-    background-color: #010616;
-    color:  #c2920f;
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor de flecha */
-    border-radius: 15px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Estilo para los botones cuando damos clic a estos */
-button:hover {
-    background-color: #a9c4d1; /* Color de fondo más oscuro */
-}
-
-//CONTENEDOR PRINCIPAL
-.botones-container {
-    text-align: center; /* Coloca los botones horizontalmente a la derecha */
-    margin-bottom: 20px; /* Espacio entre los botones */
-    background-color: #b3c1e8;
-    padding: 80px  80px; /* Espacio interno */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-   // align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-/*background-color: #040113; 
-color: #fff; 
-padding: 20px;
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-flex-wrap: wrap;*/
-
-
-
-
-
-.additional-content {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.additional-image {
-    width: 30px;
-    height: auto;
-    margin: 0 10px;
-}
-
-.additional-content p {
-    margin: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------------------------------------- ESTILOS FOOTER--------------------------------------------------------*/
-.footer {
-    background-color: #040113; 
-    color: #fff; 
-    padding: 20px;
+    background-color: #bae1e7;
+    color: white;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-/* Estilo para las columnas del footer */
-.footer-column {
-    flex: 1; 
-    margin-right: 20px;
-    text-align: justify;
-    background-color: #040113; 
-}
-
-/* Estilo para los títulos de las columnas del footer */
-.footer-column h3 {
-    font-size: 20px; 
-    margin-bottom: 15px; 
-}
-
-/* Estilo para los párrafos dentro de las columnas del footer */
-.footer-column p {
-    margin: 10px 0; 
-}
-
-/* Estilo para las listas dentro de las columnas del footer */
-.footer-column ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Estilo para los elementos de lista dentro de las columnas del footer */
-.footer-column ul li {
-    margin: 5px 0;
-}
-
-/* Estilo para los íconos sociales */
-.social-icons img {
-    width: 30px; 
-    margin-right: 20px; 
-    
-    
-}
-
-/* Estilo para el eslogan */
-.slogan {
+  }
+  
+  .header-container .column {
+    flex: 1;
     text-align: center;
-    width: 100%;
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 18px; 
+  }
+  
+  .seccion-tres-columnas {
+    background-color: #bae1e7;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+  }
+  
+  .seccion-tres-columnas .column {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .seccion-tres-columnas .column input {
+    width: 70%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  
+  .seccion-tres-columnas .column .tabs {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .seccion-tres-columnas .column .tabs span {
+    flex: 1;
+    background-color: #120101;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #0c010178;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .seccion-tres-columnas .column .tabs span:not(:last-child) {
+    margin-right: 5px;
+  }
+  
+  .seccion-tres-columnas .column .tabs span a {
+    text-decoration: none;
+    color: rgb(216, 165, 25);
+  }
+  
+  .seccion-tres-columnas .column button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  
+  .seccion-tres-columnas .column button img {
+    max-width: 100%;
+    width: 30px;
+  }
+  
+  .logo-img {
+    width: 85px;
+  }
+  
+  .search-button {
+    width: 25px;
+  }
+
+//------------------------------------PORTADA------------------------------------------>
+$ancho-imagen: 1400px;
+$alto-imagen: 800px;
+
+.portada {
+  width: $ancho-imagen;
+  height: $alto-imagen;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.portada img {
+  width: 80%;
+  height: aunto;
+  object-fit: cover;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------------------------Footer------------------------------------------------
+.footer {background-color: #000000;color: #ffffff;padding: 20px;display: flex;justify-content: space-between;align-items: flex-start;flex-wrap: wrap;
+    .footer-column {font-family: Arial, sans-serif;flex: 1;margin-right: 20px;text-align: justify;
+      h3 {font-size: 18px;margin-bottom: 10px;}
+      p {margin: 5px 0;}
+      ul {list-style-type: none;padding: 0;margin: 0;li {margin: 5px 0;}}
+      .footer-center{text-align: center;}
+      .footer-end{text-align: center;}
+      .social-icons {img {width: 25px;margin-right: 15px;}}
+    }
+    .slogan {text-align: center;width: 100%;margin-top: 20px;font-style: italic;font-size: 16px;}
+  }
+
+
+
