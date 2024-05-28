@@ -30,6 +30,12 @@ body {
   padding: $form-padding;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.container img {
+  width: 250%; /* La imagen ocupará el 100% del ancho del contenedor */
+  height: 100%; /* La altura se ajustará automáticamente para mantener la proporción */
 }
 
 .registration-form {

@@ -80,7 +80,7 @@
 
 //------------------------------------PORTADA------------------------------------------>
 $ancho-imagen: 1400px;
-$alto-imagen: 800px;
+$alto-imagen: 660px;
 
 .portada {
   width: $ancho-imagen;
@@ -89,16 +89,18 @@ $alto-imagen: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
+ max-height: 50vh; 
 }
 
 .portada img {
-  width: 80%;
-  height: aunto;
+  width: auto;
+  height: auto;
   object-fit: cover;
+  // max-height: 70vh; 
 }
 
 /*---------------------------------------------BOBY----------------------------------------------------------------*/
-//-------------------------------------------------AREAS------------------------------------------------
+
 //-------------------------------------------------AREAS------------------------------------------------
 
 /* Estilos para el título centrado */
