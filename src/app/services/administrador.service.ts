@@ -15,8 +15,12 @@ export class AdministradorService {
   addAdministrador(admin: Administrador): Promise<void> {
     const docRef = doc(this.collectionRef);
     admin.id = docRef.id;
-    return setDoc(docRef, admin);
+    return setDoc(docRef, admin).catch(error => {
+      console.error("Error adding document: ", error);
+      throw error;
+    });
   }
+  
 
   getAdministrador(id: string): Observable<Administrador | undefined> {
     const docRef = doc(this.collectionRef, id);

@@ -38,6 +38,40 @@
     </div>
   </div>
 
+  <form (ngSubmit)="guardarCambios()">
+    <div>
+      <label for="titulo">Título</label>
+      <input id="titulo" [(ngModel)]="libro.titulo" name="titulo" required>
+    </div>
+    <div>
+      <label for="autor">Autor</label>
+      <input id="autor" [(ngModel)]="libro.autor" name="autor" required>
+    </div>
+    <div>
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" [(ngModel)]="libro.descripcion" name="descripcion" required></textarea>
+    </div>
+    <div>
+      <label for="precio">Precio</label>
+      <input id="precio" type="number" [(ngModel)]="libro.precio" name="precio" required>
+    </div>
+    <div>
+      <label for="categoriaUid">Categoría UID</label>
+      <input id="categoriaUid" [(ngModel)]="libro.categoriaUid" name="categoriaUid" required>
+    </div>
+    <div>
+      <label for="imageUrl">URL de la Imagen</label>
+      <input id="imageUrl" [(ngModel)]="libro.imageUrl" name="imageUrl">
+    </div>
+    <div>
+      <label for="disponible">Disponible</label>
+      <input id="disponible" type="checkbox" [(ngModel)]="libro.disponible" name="disponible">
+    </div>
+    <button type="submit">Guardar Cambios</button>
+  </form>
+  
+
+
 <!-----------------------------------------BOBY------------------------------------------------------------->
 <div class="productos">
   <h2>CATÁLOGO</h2>

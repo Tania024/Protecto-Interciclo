@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserCredential } from '@angular/fire/auth';
 import { AutenticacionService } from '../../services/autenticacion.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-iniciar-sesion',
     standalone: true,
-    imports: [],
+    imports: [ ReactiveFormsModule, CommonModule],
     templateUrl: './iniciar-sesion.component.html',
-    styleUrls: ['./iniciar-sesion.component.scss']
+    styleUrl: './iniciar-sesion.component.scss'
 })
 export class IniciarSesionComponent {
   loginForm: FormGroup;
@@ -21,24 +22,24 @@ export class IniciarSesionComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      usuario: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       contrasena: ['', Validators.required]
     });
   }
 
   onLogin() {
     if (this.loginForm.valid) {
-      const { usuario, contrasena } = this.loginForm.value;
-      this.authService.login(usuario, contrasena).subscribe({
+      const { email, contrasena } = this.loginForm.value;
+      this.authService.login(email, contrasena).subscribe({
         next: (userCredential: UserCredential | null) => {
           if (userCredential) {
-            this.router.navigate(['/dashboard']); // Cambiar '/dashboard' a la ruta de tu página principal después del login
+            this.router.navigate(['/dashboard']); 
           } else {
             this.errorMessage = 'Usuario o contraseña incorrectos';
           }
         },
         error: (error) => {
-          this.errorMessage = error.message;
+          this.errorMessage = `Error: ${error.message}`;
         }
       });
     } else {

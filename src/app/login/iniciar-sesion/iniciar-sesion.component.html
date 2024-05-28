@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container">
       <div class="izq">       
-        <img class="imagen" src="assets/first.jpg" alt="">
+        <img class="imagen" src="../../../assets/imgs/" alt="">
       </div>
     </div>
     <div class="der">
@@ -13,11 +13,33 @@
           <br>
           <h2>INICIAR SESION</h2>
           <h3>Aún no tienes una cuenta?<a href="login/registrarse"><u>Crear cuenta</u></a></h3>
-          <label for="usuario">Usuario:</label>
-        <!----- <input type="text" id="usuario" name="usuario" required [(ngModel)]="usuario">--->
-          <label for="contrasena">Contraseña:</label>
-         <!---- <input type="password" id="contrasena" name="contrasena" required [(ngModel)]="contrasena">-->
-         <!-----<button type="button" (click)="ingresar()">Iniciar Sesión</button><br>--->
+          <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+              <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" formControlName="usuario" type="text" class="form-control" placeholder="Ingrese su usuario" />
+                <div *ngIf="loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched" class="text-danger">
+                  El campo usuario es requerido.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Ingrese su contraseña" />
+                <div *ngIf="loginForm.get('contrasena')?.invalid && loginForm.get('contrasena')?.touched" class="text-danger">
+                  El campo contraseña es requerido.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+              {{ errorMessage }}
+            </div>
+          </div>
+          
+          
+          <br>
+          <br>
           <button type="button">Iniciar sesion con Google</button><br>
           <button type="button">Iniciar sesion con Facebook</button>
           <br>
@@ -105,7 +127,7 @@
 
 
 
-  
+
   <!--------------------------------------FOOTER-------------------------------------->
 <footer class="footer">
     <div class="footer-column">

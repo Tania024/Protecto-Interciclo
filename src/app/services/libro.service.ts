@@ -17,25 +17,34 @@ export class LibroService {
   }
 
   getLibros(): Observable<Libro[]> {
-    return collectionData(this.collectionRef, { idField: 'id' }) as Observable<Libro[]>;
+    return collectionData(this.collectionRef, { idField: 'id' }) as Observable<Libro[]>; 
   }
 
   getLibro(id: string): Observable<Libro> {
     const libroDoc = doc(this.firestore, `${this.collectionName}/${id}`);
-    return docData(libroDoc, { idField: 'id' }) as Observable<Libro>;
+    return docData(libroDoc, { idField: 'id' }) as Observable<Libro>; 
   }
 
   addLibro(libro: Libro): Promise<DocumentReference<Libro>> {
-    return addDoc(this.collectionRef, libro);
+    return addDoc(this.collectionRef, libro).catch(error => {
+      console.error("Error adding book: ", error);
+      throw error; 
+    });
   }
 
   updateLibro(id: string, libro: Libro): Promise<void> {
     const libroDoc = doc(this.firestore, `${this.collectionName}/${id}`);
-    return updateDoc(libroDoc, { ...libro });
+    return updateDoc(libroDoc, { ...libro }).catch(error => {
+      console.error("Error updating book: ", error);
+      throw error; 
+    });
   }
 
   deleteLibro(id: string): Promise<void> {
     const libroDoc = doc(this.firestore, `${this.collectionName}/${id}`);
-    return deleteDoc(libroDoc);
+    return deleteDoc(libroDoc).catch(error => {
+      console.error("Error deleting book: ", error);
+      throw error; 
+    });
   }
 }

@@ -6,4 +6,5 @@ export class Libro {
     precio: number = 0;
     categoriaUid: string = '';
     imageUrl: string = '';
+    disponible: boolean = true;
 }
